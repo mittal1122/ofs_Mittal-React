@@ -22,7 +22,7 @@ const submit = (e)=>{
 }
 
 return (
-  <div className="container">
+  <div className="content-wrapper card-body">
 <form onSubmit={submit}>
 <div className=" form-group">
 <label >Role Name</label>

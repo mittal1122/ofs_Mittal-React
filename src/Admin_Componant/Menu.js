@@ -122,7 +122,7 @@ export default class Menu extends Component {
                 </Link>
               </li>
               <li className="nav-item">
-              <Link to="addvendor" className="nav-link">
+              <Link to="addcity" className="nav-link">
                   <i className="far fa-circle nav-icon" />
                   <p>City</p>
                 </Link>
@@ -192,6 +192,16 @@ export default class Menu extends Component {
               <i className="nav-icon fas fa-book" />
               <p>
                 Brand List
+                <i className="fas fa-angle-left right" />
+              </p>
+            </Link>
+            
+          </li>
+          <li className="nav-item has-treeview">
+            <Link to="getcity" className="nav-link">
+              <i className="nav-icon fas fa-book" />
+              <p>
+                City List
                 <i className="fas fa-angle-left right" />
               </p>
             </Link>

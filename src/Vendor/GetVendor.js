@@ -35,7 +35,9 @@ export const GetVendor = () => {
 
       <div className=" content-wrapper card-body table-responsive col-md-10">
         <h3 className="row-1 d-inline-flex"> Vendor</h3>
-        <button className="btn btn-info float-right">Add Vendor</button>
+        <Link to="addvendor" className="btn btn-info float-right">
+          Add Vendor
+        </Link>
 
         <table className="   table-hover table table-striped">
           <thead className="m-0 text-dark ">
@@ -70,17 +72,17 @@ export const GetVendor = () => {
                         DELETE
                       </button>
                       <Link
-                        to={`/getvendor/updatevendor/${vendor._id}`}
+                        to={`updatevendor/${vendor._id}`}
                         className="btn btn-primary"
                       >
                         UPDATE
                       </Link>
   
                       <button className="btn btn-warning btn-round waves-effect  ">
-                        <Link to="/vendordetails">View Details</Link>
+                        <Link to="vendordetails">View Details</Link>
                       </button>
                     </td>
-                  </tr>
+                  </tr> 
                 );
               }
               

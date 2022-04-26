@@ -2,13 +2,30 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "./png/logo.png";
+import Loader from 'react-spinners/BeatLoader'
 
 
-export const Login = () => {
+export const Login = ({authenticate}) => {
+
+  const [isLoading, setisLoading] = useState(false)
+
+  const [data, setdata] = useState([])
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
+  const [role, setrole] = useState('');
+  const [roleId, setroleId] = useState('');
+  const [userId, setuserId] = useState('');
+
 
   var navigate = useNavigate();
+
+  useEffect(() => {
+    setisLoading(true);
+    setTimeout(()=>{
+      setisLoading(false)
+    },3000);
+  }, [])
+  
 
   const emailChangeHandler = (e) => {
     setemail(e.target.value);
@@ -18,6 +35,29 @@ export const Login = () => {
     setpassword(e.target.value);
   };
 
+  useEffect(() => {
+    const email = localStorage.getItem("email")
+    const role = localStorage.getItem("role")
+    const roleId = localStorage.getItem("roleId")
+    const userId = localStorage.getItem("userId")
+
+    setuserId(userId);
+    setrole(role);
+    setroleId(roleId);
+    setemail(email);
+
+    if(roleId & email) {
+      setroleId(true)
+    }else{
+      setroleId(false)
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem("roleId",roleId)
+  }, [roleId])
+  
+  
 
   const submit = async (e) => {
     e.preventDefault();
@@ -34,21 +74,38 @@ export const Login = () => {
         console.log("email", res.data.data.email);
         console.log("roleName", res.data.data.role.roleName);
         console.log("roleId", res.data.data.role._id);
+        console.log("userId", res.data.data._id);
+
 
         localStorage.setItem("email", res.data.data.email);
         localStorage.setItem("roleName", res.data.data.role.roleName);
         localStorage.setItem("roleId", res.data.data.role._id)
+        localStorage.setItem("uaerId",res.data.data._id)
 
+
+        authenticate && authenticate(true , res.data.data.role._id,res.data.data._id)
+
+        console.log(`roleId`,res.data.data.role._id);
         if (res.data.data.role._id == "620c892f63551bfea59868d3") {
-          navigate("/Admindashbord");
+          isLoading ?<Loader/>
+          :
+          navigate(`/Admindashbord`);
+          localStorage.setItem("admin",res.data.data.role._id)
+          localStorage.setItem("firstName",res.data.data.firstName)
         }
 
-        else if(res.data.data.role._id == "62493c6379dd4902ea8995bc"){
-          navigate("/VendorDashbord")
+        else if(res.data.data.role._id == `62493c6379dd4902ea8995bc`){
+          isLoading ?<Loader />
+          :
+          navigate( `/VendorDashbord`)
+        }else{
+          alert("Invalid role!!!")
         }
 
       } else {
         console.log("Invalid credentials", res.data.data);
+        localStorage.removeItem("email")
+        localStorage.removeItem("role")
         alert("Invalid Credentials");
       }
     });

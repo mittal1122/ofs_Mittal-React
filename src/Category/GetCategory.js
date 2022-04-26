@@ -47,7 +47,7 @@ export const GetCategory = () => {
                 <th scope="row">{category._id}</th>
                 <td>{category.categoryName}</td>
                 <td><button onClick={() => DeleteData(category._id)} className='btn btn-danger'>DELETE</button>
-                <Link to={`/categorylist/updatecategory/${category._id}`} className="btn btn-primary">UPDATE</Link>
+                <Link to={`updatecategory/${category._id}`} className="btn btn-primary">UPDATE</Link>
                 </td>
               </tr>
             );

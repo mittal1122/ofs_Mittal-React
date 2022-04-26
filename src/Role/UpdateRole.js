@@ -32,7 +32,7 @@ export const UpdateRole = () => {
     };
     
   return (
-    <div>
+    <div className="content-wrapper card-body">
     <form onSubmit={update}>
       <div class="form-group">
         <label>Role Name</label>

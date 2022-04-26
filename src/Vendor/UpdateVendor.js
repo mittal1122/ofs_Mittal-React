@@ -50,7 +50,7 @@ export const UpdateVendor = () => {
   };
 
   return (
-    <div>
+    <div className="content-wrapper card-body">
       <form onSubmit={update}>
         <div class="form-group">
           <label>Vendor Name</label>

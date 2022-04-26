@@ -34,8 +34,6 @@ export const VendorRequest = () => {
     <div>
       <div className=" content-wrapper card-body table-responsive col-md-10">
         <h3 className="row-1 d-inline-flex"> Vendor</h3>
-        <button className="btn btn-info float-right">Add Vendor</button>
-
         <table className="  table table-hover table table-striped">
           <thead className="m-0 text-dark">
             <tr>
@@ -75,7 +73,7 @@ export const VendorRequest = () => {
                     </Link>
 
                     <button className="btn btn-warning btn-round waves-effect  ">
-                      <Link to="/vendordetails">View Details</Link>
+                      <Link to="vendordetails">View Details</Link>
                     </button>
                   </td>
                 </tr>

@@ -30,8 +30,11 @@ import { GetBrand } from "../Brand/GetBrand";
 import { UpdateBrand } from "../Brand/UpdateBrand";
 import {Dashbord2} from '../Admin_Componant/Dashbord2'
 import { Adduser } from "../User/Adduser";
-import { GetOrder } from "./Order/GetOrder";
-import { OrderDetails } from "./Order/OrderDetails";
+import { GetOrder } from "../Order/GetOrder";
+import { GetOrderDetails } from "../OrderDetailes/GetOrderDetails";
+import { AddCity } from "../City/AddCity";
+import { GetCity } from "../City/GetCity";
+import { UpdateCity } from "../City/UpdateCity";
 
 export const Dashbord = () => {
   // const [roleList, setroleList] = useState([]);
@@ -55,6 +58,7 @@ export const Dashbord = () => {
         <Route path="customersingup" element={<CustomerSingup />}></Route>
         <Route path="vendorsingup" element={<VendorSingup />}></Route>
         <Route path="addrole" element={<AddRole />}></Route>
+        <Route path="getrole/addrole" element={<AddRole />}></Route>
         <Route path="getrole" element={<GetRole />}></Route>
         <Route path="getrole/updaterole/:id" element={<UpdateRole />}></Route>
         <Route path='user/adduser' element={<Adduser/>}></Route>
@@ -63,9 +67,14 @@ export const Dashbord = () => {
         <Route path="user/userdetails" element={<User_details />}></Route>
         <Route path="user/updateuser/:userId" element={<Updateuser />}></Route>
         <Route path="addvendor" element={<AddVendor />}></Route>
+        <Route path="getvendor/addvendor" element={<AddVendor />}></Route>
         <Route path="getvendor" element={<GetVendor />}></Route>
         <Route
           path="getvendor/updatevendor/:id"
+          element={<UpdateVendor />}
+        ></Route>
+        <Route
+          path="vendorrequest/updatevendor/:id"
           element={<UpdateVendor />}
         ></Route>
         <Route path="vendorrequest" element={<VendorRequest />}></Route>
@@ -76,7 +85,7 @@ export const Dashbord = () => {
           element={<UpdateProduct />}
         ></Route>
         <Route path="addcategories" element={<AddCategory />}></Route>
-        <Route path="/categorylist" element={<GetCategory />}></Route>
+        <Route path="categorylist" element={<GetCategory />}></Route>
         <Route
           path="categorylist/updatecategory/:categoryId"
           element={<UpdateCategory />}
@@ -91,7 +100,13 @@ export const Dashbord = () => {
         <Route path='getbrand' element={<GetBrand/>}></Route>
         <Route path='getbrand/updatebrand/:id' element={<UpdateBrand/>}></Route>
         <Route path='getorder' element={<GetOrder/>}/>
-        <Route path='getorder/getorderdetails/:id' element={<OrderDetails/>}></Route>
+        <Route path='getorder/getorderdetails/:id' element={<GetOrderDetails/>}></Route>
+        <Route path="addcity" element={<AddCity />}></Route>
+        <Route path="getcity/addcity" element={<AddCity />}></Route>
+        <Route path="getcity" element={<GetCity />}></Route>
+        <Route path="getcity/updatecity/:cityId" element={<UpdateCity />}></Route>
+        
+     
       </Routes>
       <Footer />
     </div>

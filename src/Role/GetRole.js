@@ -36,7 +36,7 @@ export const GetRole = () => {
       <div className="content-wrapper card-body table-resposive ">
         <h1>This is Role List</h1>
         <h3 className="row-1 d-inline-flex">Roles</h3>
-        <Link to="/addrole" className="btn btn-info float-right">
+        <Link to="addrole" className="btn btn-info float-right">
           Add Role
         </Link>
         <table className="table table-hover table-striped">
@@ -74,7 +74,7 @@ export const GetRole = () => {
                     <ToastContainer />
 
                     <Link
-                      to={`/vendorDashbord/getrole/updaterole/${role._id}`}
+                      to={`updaterole/${role._id}`}
                       className="btn btn-primary"
                     >
                       UPDATE
