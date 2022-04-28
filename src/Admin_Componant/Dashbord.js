@@ -4,7 +4,7 @@ import Menu from "./Menu";
 import Footer from "./Footer";
 import '../_css/Dashboard.css'
 import { Route, Routes } from "react-router-dom";
-import { CustomerSingup } from "../Login/CustomerSingup";
+// import { CustomerSingup } from "../Login/CustomerSingup";
 import { VendorSingup } from "../Login/VendorSingup";
 import { AddRole } from "../Role/AddRole";
 import { GetRole } from "../Role/GetRole";
@@ -35,6 +35,8 @@ import { GetOrderDetails } from "../OrderDetailes/GetOrderDetails";
 import { AddCity } from "../City/AddCity";
 import { GetCity } from "../City/GetCity";
 import { UpdateCity } from "../City/UpdateCity";
+import { GetCart } from "../Cart/GetCart";
+import {CustSignUp} from '../Customer/Cust_SignUp/CustSignUp'
 
 export const Dashbord = () => {
   // const [roleList, setroleList] = useState([]);
@@ -55,7 +57,7 @@ export const Dashbord = () => {
       <Menu />
       <Routes>
         <Route path='dashbord2' element={<Dashbord2/>}></Route>
-        <Route path="customersingup" element={<CustomerSingup />}></Route>
+        {/* <Route path="customersingup" element={<CustomerSingup />}></Route> */}
         <Route path="vendorsingup" element={<VendorSingup />}></Route>
         <Route path="addrole" element={<AddRole />}></Route>
         <Route path="getrole/addrole" element={<AddRole />}></Route>
@@ -80,33 +82,47 @@ export const Dashbord = () => {
         <Route path="vendorrequest" element={<VendorRequest />}></Route>
         <Route path="productlist" element={<GetProduct />}></Route>
         <Route path="addproduct" element={<AddProduct />}></Route>
+        <Route path="productlist/addproduct" element={<AddProduct />}></Route>
         <Route
           path="productlist/updateproduct/:productId"
           element={<UpdateProduct />}
         ></Route>
+
+
+
+
         <Route path="addcategories" element={<AddCategory />}></Route>
+        <Route path="categorylist/addcategories" element={<AddCategory />}></Route>
         <Route path="categorylist" element={<GetCategory />}></Route>
         <Route
           path="categorylist/updatecategory/:categoryId"
           element={<UpdateCategory />}
         ></Route>
         <Route path="addsubcategory" element={<AddSubCategory />}></Route>
+        <Route path="getsubcategory/addsubcategory" element={<AddSubCategory />}></Route>
         <Route path="getsubcategory" element={<GetSubCategory />}></Route>
         <Route
           path="getsubcategory/updatecategory/:id"
           element={<UpdateSubCategory />}
         ></Route>
         <Route path="addbrand" element={<AddBrand />}></Route>
+        <Route path="getbrand/addbrand" element={<AddBrand />}></Route>
         <Route path='getbrand' element={<GetBrand/>}></Route>
         <Route path='getbrand/updatebrand/:id' element={<UpdateBrand/>}></Route>
+         
         <Route path='getorder' element={<GetOrder/>}/>
         <Route path='getorder/getorderdetails/:id' element={<GetOrderDetails/>}></Route>
         <Route path="addcity" element={<AddCity />}></Route>
         <Route path="getcity/addcity" element={<AddCity />}></Route>
         <Route path="getcity" element={<GetCity />}></Route>
         <Route path="getcity/updatecity/:cityId" element={<UpdateCity />}></Route>
+
+
+        {/* Customer */}
+        <Route path="/customersignup" element={<CustSignUp/>}></Route>
+
+
         
-     
       </Routes>
       <Footer />
     </div>

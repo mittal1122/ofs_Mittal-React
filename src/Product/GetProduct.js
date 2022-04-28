@@ -31,7 +31,7 @@ export const GetProduct = () => {
       <div className="content-wrapper card-body table-resposive ">
       <h1>This is Product List</h1> 
         <h3 className="row-1 d-inline-flex">Products</h3>
-        <Link to="/addproduct" className="btn btn-info float-right">
+        <Link to="addproduct" className="btn btn-info float-right">
           Add Product
         </Link>
         <table className="table table-hover table-striped">

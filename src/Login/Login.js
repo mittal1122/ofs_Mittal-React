@@ -80,7 +80,7 @@ export const Login = ({authenticate}) => {
         localStorage.setItem("email", res.data.data.email);
         localStorage.setItem("roleName", res.data.data.role.roleName);
         localStorage.setItem("roleId", res.data.data.role._id)
-        localStorage.setItem("uaerId",res.data.data._id)
+        localStorage.setItem("userId",res.data.data._id)
 
 
         authenticate && authenticate(true , res.data.data.role._id,res.data.data._id)
@@ -93,6 +93,13 @@ export const Login = ({authenticate}) => {
           localStorage.setItem("admin",res.data.data.role._id)
           localStorage.setItem("firstName",res.data.data.firstName)
         }
+        else if(res.data.data.role._id == `62493c9879dd4902ea8995c0`){
+          isLoading ?<Loader />
+          :
+          navigate( `/MainDashbord`);
+          localStorage.setItem("Customer Id",res.data.data.role._id)
+          localStorage.setItem("firstName",res.data.data.firstName)
+        }
 
         else if(res.data.data.role._id == `62493c6379dd4902ea8995bc`){
           isLoading ?<Loader />
@@ -102,7 +109,8 @@ export const Login = ({authenticate}) => {
           alert("Invalid role!!!")
         }
 
-      } else {
+      }
+       else {
         console.log("Invalid credentials", res.data.data);
         localStorage.removeItem("email")
         localStorage.removeItem("role")
@@ -261,14 +269,14 @@ export const Login = ({authenticate}) => {
                       </div>
                       <p className="text-inverse text-left">
                         Don't have an account?
-                        <Link to="/vendorsingup">
+                        <Link to="vendorsingup">
                           <b>For Vendor Register here </b>
                         </Link>
                         for free!
                       </p>
                       <p className="text-inverse text-left">
                         Don't have an account?
-                        <Link to="/customersingup">
+                        <Link to="customersignup">
                           <b>For Customer Register here </b>
                         </Link>
                         for free!

@@ -29,7 +29,7 @@ export const GetCategory = () => {
     <div className="content-wrapper card-body table-resposive col-md-10">
     <h1>This is Category List</h1> 
       <h3 className="row-1 d-inline-flex">Category</h3>
-      <Link to="/addcategories" className="btn btn-info float-right">
+      <Link to="addcategories" className="btn btn-info float-right">
         Add Category
       </Link>
       <table className="table table-hover table-striped">

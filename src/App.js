@@ -10,6 +10,8 @@ import ClipLoader from "react-spinners/ClipLoader";
 import axios from "axios";
 import Loader from "react-spinners/ClipLoader";
 import { NotFound } from "./Login/NotFound";
+import { MainDashbord } from "./Customer/MainDashbord";
+import { CustSignUp } from "./Customer/Cust_SignUp/CustSignUp";
 
 export const UserContext = createContext();
 
@@ -101,11 +103,22 @@ function App() {
         <Route path="/" element={<Login authenticate={authenticate} />}></Route>
         },
         {
+        <Route path="/customersignup" element={<CustSignUp/>}></Route>
+        },
+        {
         roleId === `620c892f63551bfea59868d3` ?
         isLoading ? <Loader/>
         :
         <Route path="/admindashbord/*" element={<Dashbord />}></Route>
-        :"You are not Admin"},
+        :"You are not Admin"
+        },
+        {
+           roleId === `62493c9879dd4902ea8995c0` ?
+           isLoading ? <Loader/>
+           :
+           <Route path="/MainDashbord/*" element={<MainDashbord />}></Route>
+           :"You are not Customer"
+           },
         {
           roleId === `62493c6379dd4902ea8995bc` ?
           isLoading ? <Loader/>
@@ -113,7 +126,7 @@ function App() {
         <Route path='/VendorDashbord/*' element={<VendorDashbord/>}></Route>
         : "Plese Register First"
         },
-          <Route path='/*' element={<NotFound/>}></Route>
+          {/* <Route path='/*' element={<NotFound/>}></Route> */}
          
         </Routes> 
       </UserContext.Provider>
