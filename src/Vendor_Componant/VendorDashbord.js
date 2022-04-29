@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./Header";
+import {Header} from "./Header";
 import Footer from "./Footer";
 import '../_css/Dashboard.css'
 import { Route, Routes } from "react-router-dom";
@@ -30,7 +30,7 @@ import { GetVendorProduct } from "../Vendor_Product/GetVendorProduct";
 export const VendorDashbord = () => {
   
   return (
-    <div className="position scrollmenu  col-md-10">
+    <div className="position ">
       <Header />
       <Vendor_Menu />
       <Routes>
@@ -72,7 +72,6 @@ export const VendorDashbord = () => {
 
       
       </Routes>
-      <Footer />
     </div>
   );
 };

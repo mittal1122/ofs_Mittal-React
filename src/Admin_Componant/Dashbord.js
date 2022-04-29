@@ -1,11 +1,7 @@
 import React from "react";
-import Header from "./Header";
 import Menu from "./Menu";
-import Footer from "./Footer";
 import '../_css/Dashboard.css'
 import { Route, Routes } from "react-router-dom";
-// import { CustomerSingup } from "../Login/CustomerSingup";
-import { VendorSingup } from "../Login/VendorSingup";
 import { AddRole } from "../Role/AddRole";
 import { GetRole } from "../Role/GetRole";
 import { UpdateRole } from "../Role/UpdateRole";
@@ -35,21 +31,10 @@ import { GetOrderDetails } from "../OrderDetailes/GetOrderDetails";
 import { AddCity } from "../City/AddCity";
 import { GetCity } from "../City/GetCity";
 import { UpdateCity } from "../City/UpdateCity";
-import { GetCart } from "../Cart/GetCart";
-import {CustSignUp} from '../Customer/Cust_SignUp/CustSignUp'
+import  {Header}  from "./Header";
 
 export const Dashbord = () => {
-  // const [roleList, setroleList] = useState([]);
-
-  // const getData = () => {
-  //   axios.get("http://localhost:4001/roles").then((res) => {
-  //     console.log(res.data.data);
-  //     setroleList(res.data.data);
-  //   });
-  // };
-  // useEffect(() => {
-  //   getData();
-  // }, []);
+ 
 
   return (
     <div className="position">
@@ -57,8 +42,6 @@ export const Dashbord = () => {
       <Menu />
       <Routes>
         <Route path='dashbord2' element={<Dashbord2/>}></Route>
-        {/* <Route path="customersingup" element={<CustomerSingup />}></Route> */}
-        <Route path="vendorsingup" element={<VendorSingup />}></Route>
         <Route path="addrole" element={<AddRole />}></Route>
         <Route path="getrole/addrole" element={<AddRole />}></Route>
         <Route path="getrole" element={<GetRole />}></Route>
@@ -88,9 +71,6 @@ export const Dashbord = () => {
           element={<UpdateProduct />}
         ></Route>
 
-
-
-
         <Route path="addcategories" element={<AddCategory />}></Route>
         <Route path="categorylist/addcategories" element={<AddCategory />}></Route>
         <Route path="categorylist" element={<GetCategory />}></Route>
@@ -117,14 +97,7 @@ export const Dashbord = () => {
         <Route path="getcity" element={<GetCity />}></Route>
         <Route path="getcity/updatecity/:cityId" element={<UpdateCity />}></Route>
 
-
-        {/* Customer */}
-        <Route path="/customersignup" element={<CustSignUp/>}></Route>
-
-
-        
       </Routes>
-      <Footer />
     </div>
   );
 };

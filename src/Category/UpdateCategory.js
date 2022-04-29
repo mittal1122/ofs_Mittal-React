@@ -1,8 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import Header from '../Admin_Componant/Header';
-import Menu from '../Admin_Componant/Menu';
 
 export const UpdateCategory = () => {
     var id = useParams().categoryId;
@@ -35,8 +33,6 @@ export const UpdateCategory = () => {
     
   return (
     <div>
-        <Header/>
-        <Menu/>
         <div className=" content-wrapper card-body">
     <h1>This is Update Category </h1> 
     <form onSubmit={update}>

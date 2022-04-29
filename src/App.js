@@ -12,6 +12,7 @@ import Loader from "react-spinners/ClipLoader";
 import { NotFound } from "./Login/NotFound";
 import { MainDashbord } from "./Customer/MainDashbord";
 import { CustSignUp } from "./Customer/Cust_SignUp/CustSignUp";
+import { VendorSingup } from "./Login/VendorSingup";
 
 export const UserContext = createContext();
 
@@ -100,10 +101,13 @@ function App() {
     
       <Routes>
         {
-        <Route path="/" element={<Login authenticate={authenticate} />}></Route>
+        <Route exact path="/" element={<Login authenticate={authenticate} />}></Route>
         },
         {
         <Route path="/customersignup" element={<CustSignUp/>}></Route>
+        },
+        {
+        <Route path="/vendorsignup" element={<VendorSingup/>}></Route>
         },
         {
         roleId === `620c892f63551bfea59868d3` ?
@@ -126,7 +130,7 @@ function App() {
         <Route path='/VendorDashbord/*' element={<VendorDashbord/>}></Route>
         : "Plese Register First"
         },
-          {/* <Route path='/*' element={<NotFound/>}></Route> */}
+          <Route path='/*' element={<NotFound/>}></Route>
          
         </Routes> 
       </UserContext.Provider>

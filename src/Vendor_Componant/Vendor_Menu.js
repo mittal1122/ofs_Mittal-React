@@ -6,7 +6,7 @@ export default class Vendor_Menu extends Component {
     return (
       <div>
         {/* Main Sidebar Container */}
-        <aside className="main-sidebar sidebar-dark-primary elevation-4">
+        <aside style={{display: "flex", flexDirection:"column"}} className="main-sidebar sidebar-dark-primary elevation-4">
           {/* Brand Logo */}
           <a href="index3.html" className="brand-link">
             <img

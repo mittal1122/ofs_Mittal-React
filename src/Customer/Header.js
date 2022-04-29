@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import './headerCss.css'
 
 export const Header = () => {
@@ -191,7 +192,7 @@ export const Header = () => {
                       <a href="#newsletter">contact</a>
                     </li>
                     <li className="customer_li" className="scroll">
-                      <a href="#newsletter">Login</a>
+                      <Link to="/">Login</Link>
                     </li>
                   </ul>
                   {/*/.nav */}
