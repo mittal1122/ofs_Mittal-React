@@ -1,0 +1,154 @@
+:root {
+  --border-color: rgb(206, 206, 206);
+  --link-color: #0053ee;
+}
+.react-responsive-modal-closeButton {
+    left: 14px;
+    color: var(--icon-color);
+    width: fit-content;
+  }
+  .react-responsive-modal-modal {
+    border-radius: 10px;
+    padding: 0 !important;
+    margin: 0;
+    background-color: pink;
+  }
+  .address_modal {
+    box-sizing: border-box;
+    width: 660px;
+    height: fit-content;
+    border-radius: 15px !important;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 25px;
+    box-sizing: border-box;
+  }
+  
+  #address_modal_full_name,
+  #address_modal_mobile_number,
+  #address_modal_pincode,
+  #address_modal_add_line1,
+  #address_modal_add_line2,
+  #address_modal_city,
+  #address_modal_state,
+  #address_modal_country {
+    box-sizing: border-box;
+    min-height: 40px;
+    width: 100%;
+    outline: none;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .mobile_pincode_wrapper,
+  .city_state_country_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .address_modal_mobile_number_wrapper,
+  .address_modal_pincode_wrapper {
+    width: 49%;
+  }
+  
+  .address_modal_city_wrapper,
+  .address_modal_state_wrapper,
+  .address_modal_country_wrapper {
+    width: 32%;
+  }
+  
+  .address_header {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  .address_header p {
+    color: var(--icon-color);
+    font-size: 15px;
+  }
+  
+  .address_modal_btn {
+    width: fit-content !important;
+  }
+  
+  .address_footer_buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .address_footer {
+    margin-top: 10px;
+  }
+  
+  .first_time_login_error {
+  font-size: 14px;
+  color: red;
+  display: none;
+  }
+
+  #address_modal_full_name, #address_modal_mobile_number, #address_modal_pincode, #address_modal_add_line1, #address_modal_add_line2, #address_modal_city, #address_modal_state, #address_modal_country {
+    box-sizing: border-box;
+    min-height: 40px;
+    width: 100%;
+    outline: none;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.MuiButton-text {
+  padding: 6px 8px;
+}
+
+.MuiButton-root {
+  color: rgba(0, 0, 0, 0.87);
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  min-width: 64px;
+  box-sizing: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.75;
+  border-radius: 4px;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+}
+
+.MuiButtonBase-root {
+  color: inherit;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  display: inline-flex;
+  outline: 0;
+  padding: 0;
+  position: relative;
+  align-items: center;
+  user-select: none;
+  border-radius: 0;
+  vertical-align: middle;
+  -moz-appearance: none;
+  justify-content: center;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.address_modal_btn {
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+.create_space_modal_btn {
+  text-transform: initial !important;
+  height: 30px !important;
+  border-radius: 15px !important;
+  background-color: var(--link-color) !important;
+  color: white !important;
+  font-size: 13px !important;
+  padding: 10px 25px !important;
+}
