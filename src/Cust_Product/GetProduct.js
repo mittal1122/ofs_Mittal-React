@@ -6,18 +6,28 @@ import { Link } from "react-router-dom";
 export const GetProduct = () => {
   const [productList, setproductList] = useState([]);
 
+let userId =localStorage.getItem('userId')
+
 
   const getData = async () => {
     await axios.get("http://localhost:4001/products").then((res) => {
       console.log("products",res.data.data);
       setproductList(res.data.data);  
+
     });
    
   };
 
-  const addToCartChangeHandler =(e) =>{
-    axios.post("http://localhost:4001/carts").then((res) => {
+  const addToCartChangeHandler =(vendorproduct) =>{
+    var Data = {
+      qty:1,
+        user:userId,
+        vendorproduct:vendorproduct,
+        offer:null
+    };
+    axios.post("http://localhost:4001/carts",Data).then((res) => {
       console.log("ADD TO CART-----", res.data.data);
+      alert('Product Added Successfully')
   })
 }
 
@@ -48,7 +58,7 @@ export const GetProduct = () => {
                 <div className="new-arrival-cart">
                   <p className="customer_p">
                     <span className="lnr lnr-cart" />
-                    <button className="customer_btn btn btn-warning" onClick={(e) => addToCartChangeHandler(e)}>Add <span>to </span> cart</button>
+                    <button className="customer_btn btn btn-warning" onClick={(e) => addToCartChangeHandler(product.vendorproductimg.vendorproductId)}>Add <span>to </span> cart</button>
                   </p>
                   <p  className="customer_p arrival-review pull-right">
                     <span className="lnr lnr-heart" />

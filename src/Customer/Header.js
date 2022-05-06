@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import './headerCss.css'
+import {useNavigate} from 'react-router-dom'
+
 
 export const Header = () => {
   const [cartList, setcartList] = useState([]);
@@ -16,6 +18,12 @@ export const Header = () => {
   useEffect(() => {
     getCartData();
   }, []);
+
+    const navigate = useNavigate();
+    const logoutOnClick = (e) => {
+      localStorage.clear();
+      navigate(`/`);
+    };
 
   return (
     <div>
@@ -78,7 +86,7 @@ export const Header = () => {
               {/* End Top Search */}
               <div style={{display: "inline"}} className="container  my_container">
                 {/* Start Atribute Navigation */}
-                <div style={{order: 3}} className="attr-nav">
+                <div style={{order: 4}} className="attr-nav">
                   <ul className="customer_ul">
                     <li className="customer_li" className="search">
                       <a href="#">
@@ -93,18 +101,17 @@ export const Header = () => {
                     </li>
                     {/*/.search*/}
                     <li className="customer_li" className="dropdown">
-                      <a
-                        href="#"
-                        className="dropdown-toggle"
-                        data-toggle="dropdown"
+                      <Link
+                        to='/cartdata'
+                        // className="dropdown-toggle"
+                        // data-toggle="dropdown"
                       >
                         <span className="lnr lnr-cart" />
-                        <span className="badge badge-bg-1">{"hum"}</span>
-                      </a>
+                        {/* <span className="badge badge-bg-1"></span> */}
+                      </Link>
                      
-                          <ul className="customer_ul" className="dropdown-menu cart-list s-cate">
-                          {cartList.map((cart) => {
-                        return (
+                          {/* <ul className="customer_ul" className="dropdown-menu cart-list s-cate">
+                          
                             <li className="customer_li" className="single-cart-list">
                               <a href="#" className="photo">
                                 <img className="customer_img"
@@ -123,14 +130,10 @@ export const Header = () => {
                                   1 x - <span className="price">$180.00</span>
                                 </p>
                               </div>
-                              {/*/.cart-list-txt*/}
                               <div className="cart-close">
                                 <span className="lnr lnr-cross" />
                               </div>
-                              {/*/.cart-close*/}
                             </li>
-                            );
-                      })}
                             <li className="customer_li" className="total">
                               <span>Total: $0.00</span>
                               <button
@@ -140,9 +143,11 @@ export const Header = () => {
                                 view cart
                               </button>
                             </li>
-                          </ul>
+                          </ul> */}
                         
                     </li>
+                    
+                     
                     {/*/.dropdown*/}
                   </ul>
                 </div>
@@ -166,7 +171,7 @@ export const Header = () => {
                 {/* End Header Navigation */}
                 {/* Collect the nav links, forms, and other content for toggling */}
                 <div
-                style={{order: 2}}
+                style={{order: 3}}
                   className="collapse navbar-collapse menu-ui-design"
                   id="navbar-menu"
                 >
@@ -176,27 +181,22 @@ export const Header = () => {
                     data-in="fadeInDown"
                     data-out="fadeOutUp"
                   >
-                    <li className="customer_li" className=" scroll active">
-                      <a href="#home">home</a>
-                    </li>
                     <li className="customer_li" className="scroll">
-                      <a href="#new-arrivals">new arrival</a>
+                      <Link exact to="/MainDashbord" >Home</Link>
                     </li>
                       <li className="customer_li" className="scroll">
                       <a href="#category">Categories</a>
                     </li>
                     <li className="customer_li" className="scroll">
-                      <a href="#feature">features</a>
+                      <a><span style={{cursor: "pointer"}} onClick={(e) => logoutOnClick(e)}>Logout</span></a>
                     </li>
-                    <li className="customer_li" className="scroll">
-                      <a href="#newsletter">contact</a>
-                    </li>
-                    <li className="customer_li" className="scroll">
-                      <Link to="/">Login</Link>
-                    </li>
+
                   </ul>
                   {/*/.nav */}
                 </div>
+                {/* <div style={{order: 2, display: "inline-block"}}>
+                  <button onClick={(e) => logoutOnClick(e)} >Logout</button>
+                </div> */}
                 {/* /.navbar-collapse */}
               </div>
               {/*/.container*/}

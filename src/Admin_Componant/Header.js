@@ -7,8 +7,7 @@ import './header.css'
 export const Header = () => {
   const navigate = useNavigate();
   const logoutOnClick = (e) => {
-    localStorage.removeItem("email");
-    localStorage.removeItem("role");
+    localStorage.clear();
     navigate(`/`);
   };
   

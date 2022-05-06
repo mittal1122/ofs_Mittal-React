@@ -63,7 +63,7 @@ export const AddProduct = () => {
     subcategory: subcategory,
     brand: brand,
   };
-
+  
   const submit = (e) => {
     e.preventDefault();
     axios.post("http://localhost:4001/products", Data).then((res) => {

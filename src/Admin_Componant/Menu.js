@@ -1,8 +1,15 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-export default class Menu extends Component {
-  render() {
+export const Menu =() => {
+  
+  
+  let firstName = localStorage.getItem("firstName")
+  
+
+  console.log(firstName);
+
+
   return (
 <div>
   {/* Main Sidebar Container */}
@@ -16,11 +23,8 @@ export default class Menu extends Component {
     <div className="sidebar">
       {/* Sidebar user panel (optional) */}
       <div className="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div className="image">
-          <img src="dist/img/user2-160x160.jpg" className="img-circle elevation-2" alt="User Image" />
-        </div>
         <div className="info">
-          <a href="" className="d-block">Sisman Khalas</a>
+          <Link to='jfncjhd' style={{fontSize:30}} className="">{firstName}</Link>
         </div>
       </div>
       {/* Sidebar Menu */}
@@ -217,5 +221,5 @@ export default class Menu extends Component {
 </div>
 
     )
-  }
+  
 }

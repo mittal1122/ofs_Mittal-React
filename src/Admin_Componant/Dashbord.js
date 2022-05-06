@@ -1,5 +1,5 @@
 import React from "react";
-import Menu from "./Menu";
+import {Menu} from "./Menu";
 import '../_css/Dashboard.css'
 import { Route, Routes } from "react-router-dom";
 import { AddRole } from "../Role/AddRole";

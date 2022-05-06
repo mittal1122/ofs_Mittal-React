@@ -3,8 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import { Dashbord } from "./Admin_Componant/Dashbord";
 import { Login } from "./Login/Login";
 import { VendorDashbord,  } from "./Vendor_Componant/VendorDashbord";
-import { AddRole } from "./Role/AddRole";
-import { Adduser } from "./User/Adduser";
 import { useEffect, useState, createContext } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from "axios";
@@ -13,6 +11,7 @@ import { NotFound } from "./Login/NotFound";
 import { MainDashbord } from "./Customer/MainDashbord";
 import { CustSignUp } from "./Customer/Cust_SignUp/CustSignUp";
 import { VendorSingup } from "./Login/VendorSingup";
+import { GetCart } from "./Cart/GetCart";
 
 export const UserContext = createContext();
 
@@ -108,6 +107,9 @@ function App() {
         },
         {
         <Route path="/vendorsignup" element={<VendorSingup/>}></Route>
+        },
+        {
+          <Route path="/cartdata" element={<GetCart/>}/>
         },
         {
         roleId === `620c892f63551bfea59868d3` ?

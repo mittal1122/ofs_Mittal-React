@@ -6,6 +6,8 @@ import { GetProduct } from "../Cust_Product/GetProduct";
 export const Dashbord  =() =>{
 
   const [categoryList, setcategoryList] = useState([])
+  const [isCustomer,setIsCustomer] = useState(false);
+
 
   const getData = async () => {
     await axios.get("http://localhost:4001/categories").then((res) => {
@@ -15,7 +17,13 @@ export const Dashbord  =() =>{
    
   };
 
-
+  useEffect(() => {
+    let roleName = localStorage.getItem("roleName")
+    if(roleName === 'Customer')
+      setIsCustomer(true);
+    else 
+      setIsCustomer(false);
+  }, [])
 
   useEffect(() => {
     getData();
